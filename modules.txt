@@ -1,0 +1,14 @@
+
+
+    Core module
+    Extractors module
+    Preprocessing module
+    Sorters module
+    Postprocessing module
+    Quality Metrics module
+    Comparison module
+    Exporters module
+    Widgets module
+    Curation module
+    Sorting Components module
+
