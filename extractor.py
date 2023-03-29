@@ -1,9 +1,16 @@
 import pathlib
-
 import spikeinterface.extractor as se
 
-path = "/home/skylerthomas_umass_edu/work/current_projects/spike_sort/CPWI15_2019-06-19_14-17-39_LRRL 220uA"
-path = pathlib.Path(path)
+
+"""
+Path has same stem across systems only the parent directories vary. 
+"""
+
+path_stem = "CPWI15_2019_06-19_14-17-39_LRRL_220uA"
+
+work_dir = "/home/skylerthomas_umass_edu/work/current_projects/spike_sort/"
+work_dir = pathlib.Path(work_dir)
+path = work_dir / path_stem
 
 
 def get_ephys_data(path):
@@ -11,6 +18,8 @@ def get_ephys_data(path):
     This will probably return the original "Open Ephys" data format
     """
     recording_oe = se.read_openephys(file_path=path)
+
+
 
 
 if __name__ == "__main__":
