@@ -1,5 +1,5 @@
 import pathlib
-import spikeinterface.extractor as se
+import spikeinterface.extractors as se
 
 
 """
@@ -18,8 +18,6 @@ def get_ephys_data(path):
     This will probably return the original "Open Ephys" data format
     """
     recording_oe = se.read_openephys(file_path=path)
-
-
 
 
 if __name__ == "__main__":
