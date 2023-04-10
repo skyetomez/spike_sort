@@ -1,26 +1,20 @@
-import pathlib
-import spikeinterface.extractors as se
-
+import spikeinterface.extractors as se  # type:ignore
+from preprocess import clean_ephys_data
 
 """
 Path has same stem across systems only the parent directories vary. 
 """
 
-path_stem = "CPWI15_2019_06-19_14-17-39_LRRL_220uA"
 
-work_dir = "/home/skylerthomas_umass_edu/work/current_projects/spike_sort/"
-work_dir = pathlib.Path(work_dir)
-path = work_dir / path_stem
-
-
-def get_ephys_data(path):
+def get_ephys_data(path, stream_names, stream_ids):
     """
     This will probably return the original "Open Ephys" data format
     """
-    recording_oe = se.read_openephys(file_path=path)
+    recording_oe = se.read_openephys(
+        folder_path=path, stream_id=stream_ids, stream_name=stream_names
+    )
+    return clean_ephys_data(recording_oe)
 
 
 if __name__ == "__main__":
-    x = get_ephys_data(path)
-    print(type(x))
-    print(x)
+    pass

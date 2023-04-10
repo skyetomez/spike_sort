@@ -5,4 +5,4 @@
 2. Data Load 
 3. Data Process
 4. Spike Sort
-
+5. Channel information processing
